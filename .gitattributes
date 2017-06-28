@@ -1,0 +1,3 @@
+*.private filter=fixperms
+
+vpn/secrets/* filter=git-crypt diff=git-crypt
