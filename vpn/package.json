@@ -1,0 +1,12 @@
+{
+  "name": "vpn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "gcloud beta functions deploy get --stage-bucket ymedlop-website-cloud-functions --trigger-http"
+  },
+  "dependencies": {
+    "googleapis": "19.0.0"
+  }
+}
