@@ -1,10 +1,13 @@
 {
   "name": "vpn",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "deploy": "gcloud beta functions deploy get --stage-bucket ymedlop-website-cloud-functions --trigger-http"
+    "deploy": "yarn deploy-check && yarn deploy-create && yarn deploy-regen",
+    "deploy-check": "gcloud beta functions deploy checkVpn --stage-bucket ymedlop-website-cloud-functions --trigger-http",
+    "deploy-create": "gcloud beta functions deploy createVpn --stage-bucket ymedlop-website-cloud-functions --trigger-http",
+    "deploy-regen": "gcloud beta functions deploy regenVpn --stage-bucket ymedlop-website-cloud-functions --trigger-http"
   },
   "dependencies": {
     "googleapis": "19.0.0"
